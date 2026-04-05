@@ -1,29 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    </head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Blueprint | VaultAI Consulting</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#020617;
+  --card:#0f172a;
+  --accent:#3b82f6;
+  --text:#f8fafc;
+  --dim:#94a3b8;
+  --border:#1e293b;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background: radial-gradient(circle at top, #0b1220 0%, var(--bg) 60%);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.container {
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+.back {
+  display:inline-block;
+  margin-bottom:30px;
+  color:var(--dim);
+  text-decoration:none;
+}
+
+.back:hover {
+  color:var(--accent);
+}
+
+.card {
+  background:var(--card);
+  padding:40px;
+  border-radius:20px;
+  border:1px solid var(--border);
+}
+
+h1 {
+  margin-top:0;
+  font-size:2.5rem;
+}
+
+.price {
+  font-size:1.2rem;
+  color:var(--accent);
+  margin-bottom:20px;
+}
+
+ul {
+  padding-left:20px;
+  color:var(--dim);
+}
+
+ul li {
+  margin-bottom:10px;
+}
+
+.section {
+  margin-top:30px;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 24px;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(59,130,246,0.3);
+}
+
+.footer-links {
+  margin-top:30px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.footer-links a {
+  color:var(--dim);
+  text-decoration:none;
+}
+
+.footer-links a:hover {
+  color:var(--accent);
+}
+</style>
+</head>
 <body>
-    <header>
-        <h1>VaultAI</h1>
-        <a href="index.html" class="btn btn-outline">Back to Home</a>
-    </header>
 
-    <section class="hero">
-        <h2>The Blueprint Phase</h2>
-        <p>Every secure AI journey starts with a map. We don't guess—we calculate.</p>
-    </section>
+<div class="container">
 
-    <section class="section">
-        <div class="card" style="max-width:900px; margin:auto; text-align:left;">
-            <h3>What's Included:</h3>
-            <ul>
-                <li><strong>Hardware Audit:</strong> We analyze your current server capabilities or recommend a purchase list (NVIDIA GPUs, RAM, Storage).</li>
-                <li><strong>Data Vectorization Plan:</strong> We determine how your specific PDFs and documents will be indexed for the AI.</li>
-                <li><strong>Privacy Architecture:</strong> We design the air-gap strategy to ensure no data leaks.</li>
-            </ul>
-            <br>
-            <a href="index.html#contact" class="btn">Book Your $499 Blueprint Now</a>
-        </div>
-    </section>
+<a class="back" href="index.html">← Back to Home</a>
+
+<div class="card">
+
+<h1>AI Blueprint</h1>
+<div class="price">$499 — System Design & Assessment</div>
+
+<p>
+The AI Blueprint is a structured evaluation of your current data environment, workflows, and infrastructure. 
+We identify how to transform your documents into a secure, private AI-powered knowledge system.
+</p>
+
+<div class="section">
+<h3>What’s Included</h3>
+<ul>
+<li><strong>Infrastructure Audit:</strong> Review of your current servers, storage, and constraints.</li>
+<li><strong>Hardware Recommendations:</strong> Specific compute and storage requirements tailored to your scale.</li>
+<li><strong>Data Flow Architecture:</strong> Mapping how your documents move from ingestion to retrieval.</li>
+<li><strong>System Design Blueprint:</strong> A clear architecture diagram and deployment strategy.</li>
+<li><strong>Implementation Roadmap:</strong> Step-by-step plan for integration and rollout.</li>
+</ul>
+</div>
+
+<div class="section">
+<h3>Who This Is For</h3>
+<ul>
+<li>Organizations with large document archives</li>
+<li>Teams needing private, offline AI systems</li>
+<li>Firms evaluating AI before full deployment</li>
+</ul>
+</div>
+
+<div class="section">
+<h3>Outcome</h3>
+<p>
+By the end of the Blueprint, you’ll have a clear understanding of what it takes to deploy a private AI system,
+what hardware is required, and how your data will be structured and accessed securely.
+</p>
+</div>
+
+<a href="index.html#contact" class="btn">Start Your Blueprint</a>
+
+<div class="footer-links">
+<a href="index.html">← Back to Home</a>
+<a href="managed.html">Managed Plan →</a>
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
