@@ -1,25 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>AI Integration | VaultAI Consulting</title>
-    <style>
-        body { background: #0f172a; color: #f8fafc; font-family: sans-serif; padding: 40px; }
-        .content { max-width: 800px; margin: auto; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Integration | VaultAI Consulting</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#020617;
+  --card:#0f172a;
+  --accent:#3b82f6;
+  --text:#f8fafc;
+  --dim:#94a3b8;
+  --border:#1e293b;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background: radial-gradient(circle at top, #0b1220 0%, var(--bg) 60%);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.container {
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+.back {
+  display:inline-block;
+  margin-bottom:30px;
+  color:var(--dim);
+  text-decoration:none;
+}
+
+.back:hover {
+  color:var(--accent);
+}
+
+.card {
+  background:var(--card);
+  padding:40px;
+  border-radius:20px;
+  border:1px solid var(--border);
+}
+
+h1 {
+  margin-top:0;
+  font-size:2.5rem;
+}
+
+.price {
+  font-size:1.2rem;
+  color:var(--accent);
+  margin-bottom:20px;
+}
+
+.section {
+  margin-top:30px;
+}
+
+ul {
+  padding-left:20px;
+  color:var(--dim);
+}
+
+ul li {
+  margin-bottom:12px;
+}
+
+.highlight {
+  background:#0b1220;
+  padding:20px;
+  border-left:4px solid var(--accent);
+  border-radius:10px;
+  margin-top:20px;
+  color:var(--dim);
+}
+
+.btn {
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 24px;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(59,130,246,0.3);
+}
+
+.footer-links {
+  margin-top:30px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.footer-links a {
+  color:var(--dim);
+  text-decoration:none;
+}
+
+.footer-links a:hover {
+  color:var(--accent);
+}
+</style>
 </head>
 <body>
-    <div class="content">
-        <h1>Full System Integration ($2,500)</h1>
-        <p>We handle the heavy lifting. We build, install, and train your team.</p>
-        <h3>Key Features:</h3>
-        <ul>
-            <li><strong>Complete On-Prem Deployment:</strong> Your "Vault" is built on your hardware.</li>
-            <li><strong>Document Vectorization:</strong> We index your entire archive.</li>
-            <li><strong>Staff Enablement:</strong> We teach your team how to query the system.</li>
-            <li><strong>Zero Cloud Exposure:</strong> Fully isolated from the internet.</li>
-        </ul>
-        <a href="index.html#contact" class="btn">Install My System</a>
-    </div>
+
+<div class="container">
+
+<a class="back" href="index.html">← Back to Home</a>
+
+<div class="card">
+
+<h1>Full System Integration</h1>
+<div class="price">$2,500 — End-to-End Deployment</div>
+
+<p>
+We handle the entire implementation of your private AI system — from setup to deployment to team training.
+This package is designed for organizations that want a fully operational system without managing technical complexity.
+</p>
+
+<div class="section">
+<h3>What’s Included</h3>
+<ul>
+<li><strong>On-Prem Deployment:</strong> Installation of your AI system directly on your hardware or local environment.</li>
+<li><strong>Document Ingestion & Vectorization:</strong> We process and index your entire document archive for fast retrieval.</li>
+<li><strong>Custom Search Interface:</strong> A simple internal tool your team can use to query documents.</li>
+<li><strong>System Configuration:</strong> Optimization of performance, retrieval accuracy, and system architecture.</li>
+<li><strong>Team Training:</strong> Hands-on onboarding so your staff can effectively use the system.</li>
+</ul>
+</div>
+
+<div class="section">
+<h3>Security & Privacy</h3>
+<div class="highlight">
+Your system is deployed locally or in an isolated environment. No document data is sent to external APIs unless explicitly configured by you. The architecture is designed to keep sensitive information within your control.
+</div>
+</div>
+
+<div class="section">
+<h3>Ideal For</h3>
+<ul>
+<li>Law firms managing confidential case files</li>
+<li>Real estate teams with large contract archives</li>
+<li>Organizations transitioning from manual document search to AI-assisted workflows</li>
+</ul>
+</div>
+
+<div class="section">
+<h3>Outcome</h3>
+<p>
+By the end of the integration, your organization will have a fully functional private AI system capable of searching, retrieving, and analyzing internal documents securely and efficiently.
+</p>
+</div>
+
+<a href="index.html#contact" class="btn">Install My System</a>
+
+<div class="footer-links">
+<a href="blueprint.html">← Blueprint</a>
+<a href="managed.html">Managed Plan →</a>
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
