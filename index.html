@@ -3,72 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VaultAI Consulting | Private AI for Law & Real Estate</title>
+    <title>VaultAI Consulting | Secure AI Infrastructure</title>
     <style>
-        :root { --bg: #0f172a; --card: #1e293b; --accent: #38bdf8; --text: #f8fafc; --dim: #94a3b8; }
-        body { margin: 0; font-family: -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; scroll-behavior: smooth; }
-        nav { background: #1e293b; padding: 15px 20px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #334155; }
-        nav a { color: #f8fafc; margin: 0 15px; text-decoration: none; font-weight: bold; transition: 0.2s; }
-        nav a:hover { color: var(--accent); }
-        .hero { text-align: center; padding: 100px 20px; background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%); }
-        .hero h1 { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; color: var(--dim); max-width: 700px; margin: auto; }
-        .btn { display: inline-block; margin: 10px; padding: 16px 28px; background: var(--accent); color: #0f172a; text-decoration: none; font-weight: bold; border-radius: 8px; transition: 0.2s; border: none; cursor: pointer; font-size: 1rem; }
-        .btn:hover { background: #0ea5e9; transform: translateY(-2px); }
-        .container { max-width: 1000px; margin: auto; padding: 60px 20px; text-align: center; }
-        .grid { display: grid; gap: 20px; margin-top: 40px; }
-        @media(min-width: 700px) { .grid { grid-template-columns: 1fr 1fr; } }
-        .card { background: #1e293b; padding: 40px; border-radius: 16px; border: 1px solid #334155; text-align: left; }
+        :root { --bg: #020617; --card: #0f172a; --accent: #3b82f6; --text: #f8fafc; --dim: #94a3b8; --border: #1e293b; }
+        body { margin: 0; font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        header { padding: 20px 40px; display: flex; justify-content: space-between; align-items:center; background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border); }
+        header h1 { font-size: 1.5rem; letter-spacing: -1px; }
+
+        .btn { background: var(--accent); padding: 12px 24px; border-radius: 8px; color: white; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; }
+        .btn:hover { background: #2563eb; transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+        .hero { text-align: center; padding: 140px 20px; background: radial-gradient(circle at top, #1e293b 0%, #020617 100%); }
+        .hero h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 20px; letter-spacing: -2px; line-height: 1.1; }
+        .hero p { max-width: 800px; margin: auto; color: var(--dim); font-size: 1.2rem; }
+
+        .section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
+        .section h2 { font-size: 2.2rem; margin-bottom: 40px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--card); padding: 40px; border-radius: 20px; border: 1px solid var(--border); transition: 0.3s; text-align: left; }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .card h3 { color: var(--accent); margin-top: 0; }
-        .footer { text-align: center; padding: 80px 20px; border-top: 1px solid #334155; color: #64748b; background: #020617; }
-        .copy-hint { display: block; margin-top: 10px; font-size: 0.8rem; color: var(--accent); cursor: pointer; text-decoration: underline; }
+
+        .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .price-card { background: var(--card); padding: 40px; border-radius: 24px; border: 1px solid var(--border); position: relative; transition: 0.3s; }
+        .featured { border: 2px solid var(--accent); transform: scale(1.05); z-index: 10; }
+        .badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        .price { font-size: 3rem; font-weight: 800; margin: 20px 0; }
+        .price span { font-size: 1rem; color: var(--dim); }
+
+        ul { list-style: none; padding: 0; text-align: left; margin: 30px 0; }
+        ul li { margin-bottom: 12px; color: var(--dim); display: flex; align-items: center; }
+        ul li::before { content: "✓"; color: var(--accent); margin-right: 10px; font-weight: bold; }
+
+        .testimonial { background: #1e293b; padding: 30px; border-radius: 16px; text-align: left; border-left: 4px solid var(--accent); margin-bottom: 20px; }
+
+        form { max-width: 500px; margin: 40px auto; display: flex; flex-direction: column; gap: 15px; background: var(--card); padding: 40px; border-radius: 24px; border: 1px solid var(--border); }
+        input, textarea { padding: 14px; border-radius: 8px; border: 1px solid var(--border); background: #020617; color: white; font-size: 1rem; }
+        input:focus, textarea:focus { border-color: var(--accent); outline: none; }
+
+        .legal-box { background: #0f172a; padding: 30px; border-radius: 12px; text-align: left; font-size: 0.9rem; color: var(--dim); margin-top: 40px; }
+
+        footer { text-align: center; padding: 60px; color: var(--dim); border-top: 1px solid var(--border); }
     </style>
 </head>
 <body>
 
-<nav>
-  <a href="#hero">Home</a>
-  <a href="#solutions">Solutions</a>
-  <a href="#audit">Audit</a>
-</nav>
+<header>
+    <h1>VaultAI</h1>
+    <button class="btn btn-outline" onclick="scrollToContact()">Get Started</button>
+</header>
 
-<div id="hero" class="hero">
-    <h1>Turn Documents Into Answers — Completely Private</h1>
-    <p>VaultAI Consulting builds offline AI systems for law firms and real estate teams that need total data control.</p>
-    <a href="mailto:jshultziii@icloud.com" class="btn">Request Technical Audit</a>
-</div>
+<section class="hero">
+    <h2>Prevent AI Data Leaks.<br>Deploy Secure Systems.</h2>
+    <p>We help organizations design, audit, and deploy private AI systems that protect sensitive data, reduce operational risk, and keep you compliant.</p>
+    <div style="margin-top: 40px;">
+        <button class="btn" onclick="scrollToContact()">Book Free Consultation</button>
+    </div>
+</section>
 
-<div id="solutions" class="container">
+<section class="section">
+    <h2>What We Do</h2>
     <div class="grid">
         <div class="card">
-            <h3>For Law Firms</h3>
-            <p>Instantly search contracts and discovery documents. Maintain attorney-client privilege with air-gapped systems.</p>
+            <h3>AI Security Audits</h3>
+            <p>We analyze your AI workflows to detect vulnerabilities like prompt injection, data leakage, and unsafe integrations.</p>
         </div>
         <div class="card">
-            <h3>For Real Estate</h3>
-            <p>Automate document review for deeds and disclosures. Close deals faster without cloud exposure risks.</p>
+            <h3>Private AI Deployment</h3>
+            <p>Design and implement on-premise or air-gapped AI systems so your data never leaves your environment.</p>
+        </div>
+        <div class="card">
+            <h3>Governance & Policy</h3>
+            <p>Establish internal frameworks for safe AI usage, compliance, and long-term scalability.</p>
         </div>
     </div>
-</div>
+</section>
 
-<div id="audit" class="container">
-    <h2>Ready for a Technical Audit?</h2>
-    <p>Get a review of your hardware and document workflow.</p>
-    <a href="mailto:jshultziii@icloud.com" class="btn">Email Consultant Directly</a>
-    <span class="copy-hint" onclick="copyEmail()">Or click here to copy email address</span>
-</div>
+<section class="section">
+    <h2>How It Works</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>1. Discovery</h3>
+            <p>We assess your current AI tools, workflows, and data handling practices.</p>
+        </div>
+        <div class="card">
+            <h3>2. Risk Analysis</h3>
+            <p>We identify vulnerabilities, inefficiencies, and compliance gaps in your system.</p>
+        </div>
+        <div class="card">
+            <h3>3. Implementation Plan</h3>
+            <p>You receive a clear roadmap to secure and optimize your AI infrastructure.</p>
+        </div>
+    </div>
+</section>
 
-<div class="footer">
-    <strong>VaultAI Consulting</strong><br>
-    Weston, West Virginia<br><br>
-    <a href="mailto:jshultziii@icloud.com" style="color: #38bdf8; text-decoration: none;">jshultziii@icloud.com</a>
-</div>
+<section class="section">
+    <h2>Case Study</h2>
+    <div class="card" style="max-width:800px;margin:auto;">
+        <h3>Legal Tech Firm</h3>
+        <p><strong>Problem:</strong> Sensitive client documents being processed through third-party AI tools.</p>
+        <p><strong>Solution:</strong> Implemented a local AI pipeline with access controls and data isolation.</p>
+        <p><strong>Result:</strong> Eliminated external data exposure and reduced compliance risk significantly.</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Client Results</h2>
+    <div class="grid">
+        <div class="testimonial">
+            <p>"VaultAI identified critical leaks in our document pipeline. Essential for anyone in Law."</p>
+            <p><strong>— Legal Tech Lead</strong></p>
+        </div>
+        <div class="testimonial">
+            <p>"The transition to local AI saved us thousands in API fees and secured our client data."</p>
+            <p><strong>— Real Estate Executive</strong></p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Transparent Pricing</h2>
+    <div class="pricing">
+        <div class="price-card">
+            <h3>Starter Audit</h3>
+            <div class="price">$499</div>
+            <p style="color:var(--dim)">Best for small teams needing a quick risk snapshot.</p>
+            <ul>
+                <li>2-hour system review</li>
+                <li>Top 5 risk assessment</li>
+                <li>Email summary report</li>
+            </ul>
+            <button class="btn btn-outline" onclick="selectPlan('Starter Audit')">Choose Starter</button>
+        </div>
+
+        <div class="price-card featured">
+            <div class="badge">Most Popular</div>
+            <h3>Business Package</h3>
+            <div class="price">$2,500</div>
+            <p style="color:var(--dim)">Ideal for companies actively integrating AI into workflows.</p>
+            <ul>
+                <li>Full security deep-dive</li>
+                <li>Local deployment roadmap</li>
+                <li>Staff safety training</li>
+                <li>Implementation support</li>
+            </ul>
+            <button class="btn" onclick="selectPlan('Business Package')">Secure My Business</button>
+        </div>
+
+        <div class="price-card">
+            <h3>Enterprise</h3>
+            <div class="price">$5k<span>/mo</span></div>
+            <p style="color:var(--dim)">Ongoing support for organizations requiring continuous oversight.</p>
+            <ul>
+                <li>Ongoing oversight</li>
+                <li>Custom model training</li>
+                <li>24/7 Priority support</li>
+            </ul>
+            <button class="btn btn-outline" onclick="selectPlan('Enterprise')">Contact Us</button>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <h2>Let's Talk Strategy</h2>
+    <p>Submit your details and we’ll respond within 24 hours. No spam. No data selling.</p>
+    <form action="https://formspree.io/f/xaqllgzd" method="POST">
+        <input type="hidden" name="selected_plan" id="selected_plan" value="General Inquiry">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <textarea name="message" rows="5" placeholder="Tell us about your AI project..." required></textarea>
+        <button class="btn" type="submit">Send Message</button>
+    </form>
+
+    <div class="legal-box">
+        <p><strong>Data Commitment:</strong> VaultAI Consulting does not sell, rent, or share your personal data. Information is used solely to respond to inquiries and provide consulting services. You may request deletion of your data at any time.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 VaultAI Consulting | Secure AI Infrastructure</p>
+</footer>
 
 <script>
-    function copyEmail() {
-        navigator.clipboard.writeText("jshultziii@icloud.com");
-        alert("Email address copied to clipboard!");
-    }
+function scrollToContact() {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
+function selectPlan(plan) {
+    document.getElementById('selected_plan').value = plan;
+    scrollToContact();
+}
 </script>
 
 </body>
