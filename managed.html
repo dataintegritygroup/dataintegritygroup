@@ -1,24 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Managed AI | VaultAI Consulting</title>
-    <style>
-        body { background: #0f172a; color: #f8fafc; font-family: sans-serif; padding: 40px; }
-        .content { max-width: 800px; margin: auto; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Managed AI | VaultAI Consulting</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#020617;
+  --card:#0f172a;
+  --accent:#3b82f6;
+  --text:#f8fafc;
+  --dim:#94a3b8;
+  --border:#1e293b;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background: radial-gradient(circle at top, #0b1220 0%, var(--bg) 60%);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.container {
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+.back {
+  display:inline-block;
+  margin-bottom:30px;
+  color:var(--dim);
+  text-decoration:none;
+}
+
+.back:hover {
+  color:var(--accent);
+}
+
+.card {
+  background:var(--card);
+  padding:40px;
+  border-radius:20px;
+  border:1px solid var(--border);
+}
+
+h1 {
+  margin-top:0;
+  font-size:2.5rem;
+}
+
+.price {
+  font-size:1.2rem;
+  color:var(--accent);
+  margin-bottom:20px;
+}
+
+.section {
+  margin-top:30px;
+}
+
+ul {
+  padding-left:20px;
+  color:var(--dim);
+}
+
+ul li {
+  margin-bottom:12px;
+}
+
+.highlight {
+  background:#0b1220;
+  padding:20px;
+  border-left:4px solid var(--accent);
+  border-radius:10px;
+  margin-top:20px;
+  color:var(--dim);
+}
+
+.btn {
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 24px;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(59,130,246,0.3);
+}
+
+.footer-links {
+  margin-top:30px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.footer-links a {
+  color:var(--dim);
+  text-decoration:none;
+}
+
+.footer-links a:hover {
+  color:var(--accent);
+}
+</style>
 </head>
 <body>
-    <div class="content">
-        <h1>Managed Infrastructure ($5K+/mo)</h1>
-        <p>You focus on your firm; we focus on your AI. We become your off-site technology partner.</p>
-        <h3>Included Services:</h3>
-        <ul>
-            <li><strong>Continuous Optimization:</strong> Retraining your models as document volumes grow.</li>
-            <li><strong>Hardware Maintenance:</strong> Proactive server and security health checks.</li>
-            <li><strong>Priority Support:</strong> Direct lines for any tech hurdles.</li>
-        </ul>
-        <a href="index.html#contact" class="btn">Inquire About Managed Services</a>
-    </div>
+
+<div class="container">
+
+<a class="back" href="index.html">← Back to Home</a>
+
+<div class="card">
+
+<h1>Managed AI Infrastructure</h1>
+<div class="price">$5,000+/mo — Ongoing Partnership</div>
+
+<p>
+We act as your long-term AI infrastructure partner. Instead of a one-time deployment, we continuously manage, optimize,
+and support your private AI system so your team can focus entirely on operations and outcomes.
+</p>
+
+<div class="section">
+<h3>What’s Included</h3>
+<ul>
+<li><strong>Continuous Optimization:</strong> Ongoing tuning of models, retrieval systems, and performance as your data grows.</li>
+<li><strong>System Monitoring:</strong> Regular health checks for uptime, performance, and stability.</li>
+<li><strong>Maintenance & Updates:</strong> Updates to models, pipelines, and infrastructure components.</li>
+<li><strong>Priority Support:</strong> Direct access to technical support for fast issue resolution.</li>
+<li><strong>Scalability Management:</strong> Adjustments to ensure the system grows with your organization.</li>
+</ul>
+</div>
+
+<div class="section">
+<h3>Security & Control</h3>
+<div class="highlight">
+Your infrastructure remains under your control. We operate within your environment and follow agreed access protocols.
+All systems are designed to maintain data privacy, with no unauthorized external data sharing.
+</div>
+</div>
+
+<div class="section">
+<h3>Who This Is For</h3>
+<ul>
+<li>Organizations with active, high-volume document systems</li>
+<li>Teams that require ongoing technical management of AI infrastructure</li>
+<li>Clients who want a dedicated partner instead of managing internal AI operations</li>
+</ul>
+</div>
+
+<div class="section">
+<h3>Outcome</h3>
+<p>
+With managed services, your AI system remains continuously optimized, secure, and aligned with your business needs—
+without requiring internal technical overhead.
+</p>
+</div>
+
+<a href="index.html#contact" class="btn">Inquire About Managed Services</a>
+
+<div class="footer-links">
+<a href="integration.html">← Integration</a>
+<a href="index.html">Home →</a>
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
