@@ -6,22 +6,22 @@
     <title>Data Integrity Group | Private AI Infrastructure</title>
     <style>
         :root { --bg: #020617; --card: #0f172a; --accent: #38bdf8; --text: #f8fafc; --dim: #94a3b8; }
-        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: radial-gradient(circle at top, #1e293b 0%, #020617 100%); color: var(--text); line-height: 1.6; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: radial-gradient(circle at top, #1e293b 0%, #020617 100%); color: var(--text); line-height: 1.6; overflow-x: hidden; }
         nav { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(10px); padding: 1.2rem; text-align: center; position: sticky; top: 0; border-bottom: 1px solid #1e293b; z-index: 100; }
         nav a { color: var(--text); margin: 0 20px; text-decoration: none; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         nav a:hover { color: var(--accent); }
         .hero { text-align: center; padding: 120px 20px; max-width: 900px; margin: auto; }
-        .hero h1 { font-size: 4rem; color: #ffffff; margin-bottom: 1rem; letter-spacing: -1px; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); color: #ffffff; margin-bottom: 1rem; letter-spacing: -1px; }
         .hero p { font-size: 1.4rem; color: var(--dim); margin-bottom: 2.5rem; }
-        .btn { display: inline-block; padding: 1.2rem 2.5rem; background: var(--accent); color: #020617; text-decoration: none; font-weight: 800; border-radius: 50px; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); transition: 0.3s; }
+        .btn { display: inline-block; padding: 1.2rem 2.5rem; background: var(--accent); color: #020617; text-decoration: none; font-weight: 800; border-radius: 50px; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); transition: 0.3s; cursor: pointer; border: none; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(56, 189, 248, 0.3); }
         .container { max-width: 1200px; margin: auto; padding: 60px 20px; }
-        .grid { display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
-        .card { background: var(--card); padding: 3rem; border-radius: 24px; border: 1px solid #1e293b; transition: 0.3s; position: relative; overflow: hidden; }
-        .card:hover { border-color: var(--accent); transform: scale(1.02); }
+        .grid { display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        .card { background: var(--card); padding: 3rem; border-radius: 24px; border: 1px solid #1e293b; transition: 0.3s; position: relative; }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .card h3 { color: var(--accent); font-size: 1.8rem; margin-top: 0; }
         .card p { color: var(--dim); font-size: 1.1rem; }
-        .tag { display: inline-block; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; margin-bottom: 15px; }
+        .tag { display: inline-block; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; }
         footer { text-align: center; padding: 100px 20px; border-top: 1px solid #1e293b; background: #020617; }
         .footer-logo { font-size: 1.5rem; font-weight: bold; color: var(--text); margin-bottom: 10px; }
     </style>
@@ -36,21 +36,21 @@
 
 <section id="hero" class="hero">
     <h1>Data Integrity Group</h1>
-    <p>We deploy high-performance, air-gapped AI infrastructure for firms that cannot risk cloud-based data leaks.</p>
-    <a href="#contact" class="btn">Schedule Technical Audit</a>
+    <p>On-premise, air-gapped AI infrastructure. We secure sensitive professional data by eliminating cloud dependency.</p>
+    <a href="#contact" class="btn">Request Technical Audit</a>
 </section>
 
 <div id="solutions" class="container">
     <div class="grid">
         <div class="card">
-            <span class="tag">LEGAL SECTOR</span>
+            <span class="tag">Legal Sector</span>
             <h3>Private Discovery Engine</h3>
-            <p>Perform rapid document analysis and case-law retrieval on-premise. Keep sensitive client data entirely within your local network.</p>
+            <p>Perform document analysis and case-law retrieval locally. Ensure client-attorney privilege remains air-gapped and secure.</p>
         </div>
         <div class="card">
-            <span class="tag">REAL ESTATE</span>
-            <h3>Title & Deed Automation</h3>
-            <p>Automate the analysis of property disclosures and easements. Accelerate closing times without sending proprietary data to third-party servers.</p>
+            <span class="tag">Real Estate</span>
+            <h3>Intelligence Automation</h3>
+            <p>Instantly process deeds, disclosures, and easements. Accelerate closing times while keeping proprietary data on your hardware.</p>
         </div>
     </div>
 </div>
