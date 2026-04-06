@@ -4,366 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VaultAI Consulting | Private AI Infrastructure</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg:#020617;
-            --card:#0f172a;
-            --accent:#3b82f6;
-            --text:#f8fafc;
-            --dim:#94a3b8;
-            --border:#1e293b;
+            --bg: #0F172A; /* Deep Navy from the App */
+            --card: #1E293B; /* Secondary Navy */
+            --accent: #D4AF37; /* Premium Gold */
+            --accent-hover: #B8962E;
+            --text: #F8FAFC;
+            --dim: #94A3B8;
+            --border: #334155;
         }
         * { box-sizing: border-box; }
         body {
             margin:0;
-            font-family:'Inter',sans-serif;
-            background: radial-gradient(circle at top, #0b1220 0%, var(--bg) 60%);
+            font-family:'Inter', sans-serif;
+            background: var(--bg);
             color:var(--text);
             line-height: 1.6;
             scroll-behavior: smooth;
         }
         header {
-            padding:20px 40px;
+            padding:15px 40px;
             display:flex;
             justify-content:space-between;
             align-items:center;
             position:sticky;
             top:0;
-            background:rgba(2,6,23,0.7);
+            background:rgba(15, 23, 42, 0.9);
             backdrop-filter:blur(12px);
             border-bottom:1px solid var(--border);
             z-index: 1000;
         }
-        h1 { font-size:1.4rem; margin: 0; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        h1 { font-size:1.4rem; margin: 0; color: var(--accent); }
+        
         .btn {
             background:var(--accent);
-            padding:12px 24px;
-            border-radius:8px;
+            padding:12px 28px;
+            border-radius:50px; /* Rounded pill buttons to match App */
             border:none;
-            color:white;
-            font-weight:600;
+            color: #0F172A; /* Dark text on gold button for contrast */
+            font-weight:700;
             cursor:pointer;
             transition:0.3s;
             text-decoration: none;
             display: inline-block;
             text-align: center;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
         }
         .btn:hover {
             transform:translateY(-2px);
-            box-shadow:0 10px 20px rgba(59,130,246,0.3);
-            background: #2563eb;
+            box-shadow:0 10px 20px rgba(212, 175, 55, 0.2);
+            background: var(--accent-hover);
         }
         .btn-outline {
             background:transparent;
-            border:1px solid var(--border);
-            color: var(--text);
-        }
-        .btn-outline:hover {
-            border-color: var(--accent);
+            border:1px solid var(--accent);
             color: var(--accent);
         }
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        /* Hero Facelift */
         .hero {
             text-align:center;
-            padding:140px 20px 100px;
-            position:relative;
+            padding:160px 20px 100px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
         }
         .hero h2 {
-            font-size:clamp(2.5rem,5vw,4rem);
+            font-size:clamp(2.5rem, 5vw, 4.5rem);
             line-height:1.1;
             margin-bottom: 20px;
+            color: var(--text);
         }
         .hero p {
-            max-width:800px;
+            max-width:700px;
             margin:20px auto;
             color:var(--dim);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
-        .badges {
-            display:flex;
-            justify-content:center;
-            gap:10px;
-            margin-top:20px;
-            flex-wrap:wrap;
-        }
-        .badge {
-            border:1px solid var(--border);
-            padding:6px 12px;
-            border-radius:20px;
-            font-size:0.8rem;
-            color:var(--dim);
-        }
+
         .section {
             padding:100px 20px;
             max-width:1100px;
             margin:auto;
             text-align:center;
         }
-        .section h2 { font-size: 2.2rem; margin-bottom: 40px; }
         .grid {
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
             gap:25px;
         }
         .card {
-            background:linear-gradient(145deg,#0f172a,#020617);
+            background: var(--card);
             padding:40px;
             border-radius:20px;
             border:1px solid var(--border);
             transition:0.3s;
             text-align:left;
         }
-        .card:hover {
-            transform:translateY(-6px);
-            border-color:var(--accent);
-        }
-        .icon {
-            width:40px;
-            height:40px;
-            margin-bottom:15px;
-            color: var(--accent);
-        }
-        .pricing {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:30px;
-            margin-top: 40px;
-        }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .icon { width:40px; height:40px; margin-bottom:15px; color: var(--accent); }
+
+        /* Pricing Facelift */
         .price-card {
             background:var(--card);
             padding:40px;
             border-radius:24px;
             border:1px solid var(--border);
-            position:relative;
-            display: flex;
-            flex-direction: column;
             transition: 0.3s;
         }
-        .featured {
-            border:2px solid var(--accent);
-            transform:scale(1.05);
-            z-index: 10;
+        .featured { border: 2px solid var(--accent); background: #162033; }
+        .price { font-size:3.5rem; font-weight:bold; margin:20px 0; color: var(--accent); }
+
+        /* Support Section for App Users */
+        .support-banner {
+            background: #1E293B;
+            border: 1px dashed var(--accent);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            text-align: center;
         }
-        .badge-top {
-            position:absolute;
-            top:-15px;
-            left:50%;
-            transform:translateX(-50%);
-            background:var(--accent);
-            padding:5px 15px;
-            border-radius:20px;
-            font-size:0.8rem;
-            font-weight: bold;
-        }
-        .price {
-            font-size:3rem;
-            font-weight:bold;
-            margin:20px 0;
-        }
-        ul {
-            list-style:none;
-            padding:0;
-            text-align: left;
-            margin: 30px 0;
-            flex-grow: 1;
-        }
-        ul li {
-            margin-bottom:12px;
-            color:var(--dim);
-            display:flex;
-            align-items: center;
-        }
-        ul li::before {
-            content: "✓";
-            color: var(--accent);
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        .step {
-            display:flex;
-            align-items:flex-start;
-            gap:15px;
-            background:var(--card);
-            padding:25px;
-            border-radius:16px;
-            border:1px solid var(--border);
-            text-align: left;
-            margin-bottom: 15px;
-        }
-        .step-number {
-            background:var(--accent);
-            width:32px;
-            min-width: 32px;
-            height:32px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            border-radius:50%;
-            font-weight:bold;
-        }
+
         form {
-            max-width:500px;
+            max-width:550px;
             margin:40px auto;
-            display:flex;
-            flex-direction:column;
-            gap:15px;
             background:var(--card);
             padding:40px;
             border-radius:24px;
             border:1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-        input, textarea {
+        input, textarea, select {
             padding:14px;
             border-radius:8px;
             border:1px solid var(--border);
             background:#020617;
             color:white;
             font-size: 1rem;
+            width: 100%;
         }
-        input:focus, textarea:focus { border-color: var(--accent); outline: none; }
-        .legal {
-            max-width:900px;
-            margin:60px auto 0;
-            padding:30px;
-            border:1px solid var(--border);
-            border-radius:16px;
-            background:#0b1220;
-            color:var(--dim);
-            text-align:left;
-            font-size:0.9rem;
-        }
-        footer {
-            text-align:center;
-            padding:60px;
-            color:var(--dim);
-            border-top:1px solid var(--border);
-        }
+        .legal { font-size: 0.8rem; color: var(--dim); margin-top: 40px; text-align: left; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>VaultAI</h1>
-    <button class="btn btn-outline" onclick="scrollToContact()">Get Started</button>
+    <h1>🛡️ VAULT AI</h1>
+    <button class="btn btn-outline" onclick="scrollToContact()">Inquire Now</button>
 </header>
 
 <section class="hero">
-    <h2>Private AI Systems for Your Documents</h2>
-    <p>We install secure, offline AI systems that transform your internal files into a searchable intelligence layer — no cloud, no data leaks.</p>
-    <div class="badges">
-        <div class="badge">On-Prem Deployment</div>
-        <div class="badge">Air-Gapped Options</div>
-        <div class="badge">Custom Infrastructure</div>
-    </div>
+    <h2>Intelligence Locked in Your Infrastructure.</h2>
+    <p>Premium AI deployment for property intelligence, legal archives, and legacy data indexing. 100% Private. 100% Local.</p>
     <div style="margin-top:40px;">
-        <button class="btn" onclick="scrollToContact()">Book Consultation</button>
-    </div>
-</section>
-
-<section class="section">
-    <h2>What We Build</h2>
-    <div class="grid">
-        <div class="card">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <h3>Legacy Data Indexing</h3>
-            <p>Convert scattered PDFs, contracts, and archives into a structured, searchable knowledge system.</p>
-        </div>
-        <div class="card">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3 9-8 10-5-1-8-5-8-10V6l8-4z"/></svg>
-            <h3>Secure Deployment</h3>
-            <p>Install AI systems locally so your sensitive business data never leaves your internal environment.</p>
-        </div>
-        <div class="card">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
-            <h3>Internal Tools</h3>
-            <p>Custom, simple interfaces your team can use to query documents and retrieve insights instantly.</p>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <h2>How It Works</h2>
-    <div style="max-width: 800px; margin: auto;">
-        <div class="step">
-            <div class="step-number">1</div>
-            <div>
-                <h3>Blueprint</h3>
-                <p>We assess your document volume, legal workflows, and specific hardware requirements.</p>
-            </div>
-        </div>
-        <div class="step">
-            <div class="step-number">2</div>
-            <div>
-                <h3>Installation</h3>
-                <p>We physically or remotely deploy and configure your private AI system and index your archives.</p>
-            </div>
-        </div>
-        <div class="step">
-            <div class="step-number">3</div>
-            <div>
-                <h3>Enablement</h3>
-                <p>We train your team and ensure your infrastructure is optimized for daily searching and analysis.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <h2>Pricing & Services</h2>
-    <div class="pricing">
-        <div class="price-card">
-            <h3>Blueprint</h3>
-            <div class="price">$499</div>
-            <ul>
-                <li>System design</li>
-                <li>Hardware audit</li>
-                <li>Data roadmap</li>
-            </ul>
-            <a href="blueprint.html" class="btn btn-outline">Learn More</a>
-        </div>
-
-        <div class="price-card featured">
-            <div class="badge-top">Most Popular</div>
-            <h3>Integration</h3>
-            <div class="price">$2,500</div>
-            <ul>
-                <li>Full installation</li>
-                <li>Document indexing</li>
-                <li>Tool deployment</li>
-                <li>Team onboarding</li>
-            </ul>
-            <a href="integration.html" class="btn">Install System</a>
-        </div>
-
-        <div class="price-card">
-            <h3>Managed</h3>
-            <div class="price">$5k/mo</div>
-            <ul>
-                <li>Maintenance</li>
-                <li>Model updates</li>
-                <li>24/7 Priority support</li>
-            </ul>
-            <a href="managed.html" class="btn btn-outline">View Details</a>
-        </div>
+        <button class="btn" onclick="scrollToContact()">Secure Your Data</button>
     </div>
 </section>
 
 <section class="section" id="contact">
-    <h2>Start Your System</h2>
-    <p>Submit your details and I will personally reach out within 24 hours.</p>
+    <h2>System Support & Consultation</h2>
+    
+    <div class="support-banner">
+        <h3 style="margin:0; color: var(--accent);">Vault AI Support</h3>
+        <p style="margin:5px 0 0 0; font-size: 0.9rem;">Using the Vault AI Desktop App? Use the form below for technical assistance.</p>
+    </div>
+
     <form action="https://formspree.io/f/xaqllgzd" method="POST">
-        <input type="hidden" name="selected_plan" id="selected_plan" value="General">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" rows="5" placeholder="Tell us about your document system or AI goals..." required></textarea>
-        <button class="btn" type="submit">Send Message</button>
+        <label style="text-align: left; font-size: 0.8rem; color: var(--accent);">INQUIRY TYPE</label>
+        <select name="type">
+            <option value="consultation">New System Consultation</option>
+            <option value="support">App Technical Support</option>
+            <option value="blueprint">Blueprint Audit Request</option>
+        </select>
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Professional Email" required>
+        <textarea name="message" rows="5" placeholder="How can we help secure your data or assist with your system?" required></textarea>
+        <button class="btn" type="submit">Submit Request</button>
     </form>
 
     <div class="legal">
-        <strong>Terms of Use & Data Policy</strong><br><br>
-        VaultAI Consulting does not sell, rent, or share user data. Any information submitted through this website is used solely for communication and service delivery purposes.
-        <br><br>
-        We implement technical safeguards to protect submitted information. By using this website, you acknowledge that your information may be stored for the purpose of responding to your inquiry. Weston, West Virginia based.
+        <strong>Privacy Commitment:</strong> Weston, West Virginia based. VaultAI Consulting operates on a strict zero-data-sharing policy. All communication is encrypted and used only for service delivery.
     </div>
 </section>
 
