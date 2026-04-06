@@ -1,15 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultAI Consulting | Private AI Infrastructure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0F172A; /* Deep Navy */
+            --card: #1E293B; /* Secondary Navy */
+            --accent: #D4AF37; /* Premium Gold */
+            --accent-hover: #B8962E;
+            --text: #F8FAFC;
+            --dim: #94A3B8;
+            --border: #334155;
+        }
+        
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; margin: 0; }
+        h1 { font-size: 1.4rem; color: var(--accent); letter-spacing: 1px; }
+
+        .btn {
+            background: var(--accent);
+            padding: 12px 28px;
+            border-radius: 50px;
+            border: none;
+            color: #0F172A;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+            background: var(--accent-hover);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 140px 20px 100px;
+            background: radial-gradient(circle at center, #1E293B 0%, #0F172A 100%);
+        }
+
+        .hero h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 20px auto;
+            color: var(--dim);
+            font-size: 1.2rem;
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+            text-align: left;
+        }
+
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: var(--card);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            background: var(--accent);
+            color: var(--bg);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .support-banner {
+            background: #1E293B;
+            border: 1px dashed var(--accent);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 40px auto;
+            max-width: 550px;
+        }
+
+        form {
+            max-width: 550px;
+            margin: 0 auto;
+            background: var(--card);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea, select {
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #020617;
+            color: white;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--dim);
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
 <body>
 
 <header>
     <h1>🛡️ VAULT AI</h1>
-    <button class="btn btn-outline" onclick="scrollToContact()">Inquire Now</button>
+    <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Inquire Now</button>
 </header>
 
 <section class="hero">
     <h2>Your Data. Your Hardware. <br><span style="color:var(--accent)">Total Privacy.</span></h2>
-    <p>Stop sending sensitive property deeds, legal contracts, and internal archives to the cloud. We deploy elite, offline AI systems directly onto your office infrastructure.</p>
+    <p>Stop sending sensitive property deeds and legal archives to the cloud. We deploy elite, offline AI systems directly onto your infrastructure.</p>
     <div style="margin-top:40px;">
-        <button class="btn" onclick="scrollToContact()">Request a System Audit</button>
+        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request a System Audit</button>
     </div>
 </section>
 
@@ -17,78 +204,32 @@
     <h2 style="color:var(--accent)">Why Private AI?</h2>
     <div class="grid">
         <div class="card">
-            <div class="icon">🔒</div>
+            <div style="font-size: 2rem; margin-bottom: 10px;">🔒</div>
             <h3>Zero Cloud Leakage</h3>
             <p>Mainstream AI bots "learn" from your data. VaultAI systems are air-gapped or strictly local. Your intellectual property stays in your building.</p>
         </div>
         <div class="card">
-            <div class="icon">⚡</div>
+            <div style="font-size: 2rem; margin-bottom: 10px;">⚡</div>
             <h3>Instant Intelligence</h3>
-            <p>Stop scrolling through 400-page PDF zoning laws. Ask your Vault AI a question and get a cited answer in under 3 seconds.</p>
+            <p>Stop scrolling through 400-page zoning laws. Ask your Vault AI a question and get a cited answer in under 3 seconds.</p>
         </div>
         <div class="card">
-            <div class="icon">🖥️</div>
+            <div style="font-size: 2rem; margin-bottom: 10px;">🖥️</div>
             <h3>Hardware Optimized</h3>
-            <p>We tune models specifically for your hardware (AMD/NVIDIA/Mac), ensuring high-speed performance without expensive server costs.</p>
-        </div>
-    </div>
-</section>
-
-<section class="section" style="background: rgba(30, 41, 59, 0.5); border-radius: 40px;">
-    <h2>The 3-Step Vault Deployment</h2>
-    <div style="max-width: 800px; margin: auto;">
-        <div class="step">
-            <div class="step-number">1</div>
-            <div>
-                <h3>The Blueprint Audit</h3>
-                <p>We analyze your document volume and existing hardware. We provide a custom roadmap for your private AI infrastructure.</p>
-            </div>
-        </div>
-        <div class="step">
-            <div class="step-number">2</div>
-            <div>
-                <h3>On-Site Integration</h3>
-                <p>We install the Vault engine, index your legacy archives (PDFs, Docs, Scans), and optimize the local LLM for your specific industry.</p>
-            </div>
-        </div>
-        <div class="step">
-            <div class="step-number">3</div>
-            <div>
-                <h3>Team Onboarding</h3>
-                <p>We provide your team with a clean, simple search interface (like the Vault AI Desktop app) and train them on prompt engineering.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <h2>Specialized for High-Stakes Industries</h2>
-    <div class="grid">
-        <div class="card" style="text-align: center;">
-            <h4 style="color:var(--accent)">Real Estate & Zoning</h4>
-            <p>Search deeds, restrictions, and city ordinances instantly during the due diligence phase.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-            <h4 style="color:var(--accent)">Legal & Compliance</h4>
-            <p>Query decades of case files and contracts without ever uploading a single word to the internet.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-            <h4 style="color:var(--accent)">Construction & Gov</h4>
-            <p>Manage massive blueprint archives and project specs with a natural language search layer.</p>
+            <p>We tune models specifically for your hardware, ensuring high-speed performance without expensive monthly server costs.</p>
         </div>
     </div>
 </section>
 
 <section class="section" id="contact">
-    <h2>Ready to Secure Your Knowledge?</h2>
+    <h2>System Support & Consultation</h2>
     
     <div class="support-banner">
-        <h3 style="margin:0; color: var(--accent);">Vault AI Support</h3>
-        <p style="margin:5px 0 0 0; font-size: 0.9rem;">Need technical help with your local Vault AI Desktop installation?</p>
+        <h3 style="color: var(--accent);">Vault AI Desktop Support</h3>
+        <p>Need technical assistance with your local installation? Submit a ticket below.</p>
     </div>
 
     <form action="https://formspree.io/f/xaqllgzd" method="POST">
-        <label style="text-align: left; font-size: 0.8rem; color: var(--accent);">HOW CAN WE HELP?</label>
         <select name="type">
             <option value="consultation">I want a system installed ($2,500+)</option>
             <option value="blueprint">I need a Blueprint Audit ($499)</option>
@@ -96,12 +237,15 @@
         </select>
         <input type="text" name="name" placeholder="Full Name" required>
         <input type="email" name="email" placeholder="Professional Email" required>
-        <textarea name="message" rows="5" placeholder="Tell us about your documents or the problem you are trying to solve..." required></textarea>
+        <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
         <button class="btn" type="submit">Submit Request</button>
     </form>
 </section>
 
 <footer>
-    © 2026 VaultAI Consulting | Based in Weston, West Virginia. <br>
+    © 2026 VaultAI Consulting | Weston, West Virginia. <br>
     Private AI Infrastructure Specialists.
 </footer>
+
+</body>
+</html>
